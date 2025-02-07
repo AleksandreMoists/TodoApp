@@ -19,6 +19,12 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+/*
+The TaskRepository class acts as an intermediary between the database (Room) and the ViewModel/UI layer.
+It fetches, inserts, updates, and deletes tasks while ensuring
+data operations happen asynchronously using coroutines.
+*/
+
 class TaskRepository(application: Application) {
 
     private val taskDao = TaskDatabase.getInstance(application).taskDao

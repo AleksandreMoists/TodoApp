@@ -4,9 +4,15 @@ import androidx.room.*
 import com.coding.meet.todo_app.models.Task
 import kotlinx.coroutines.flow.Flow
 
+/*
+    Room DAO efficiently manages CRUD operations.
+    Flow is used for live updates.
+    Supports sorting, inserting, updating, deleting, and searching tasks.
+    Uses coroutines (suspend functions) for asynchronous execution.
+ */
+
 @Dao
 interface TaskDao {
-
 
     @Query("""SELECT * FROM Task ORDER BY
         CASE WHEN :isAsc = 1 THEN taskTitle END ASC, 

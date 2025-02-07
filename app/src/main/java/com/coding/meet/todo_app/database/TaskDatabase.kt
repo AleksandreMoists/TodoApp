@@ -9,6 +9,9 @@ import com.coding.meet.todo_app.converters.TypeConverter
 import com.coding.meet.todo_app.dao.TaskDao
 import com.coding.meet.todo_app.models.Task
 
+/*
+
+ */
 @Database(
     entities = [Task::class],
     version = 1,

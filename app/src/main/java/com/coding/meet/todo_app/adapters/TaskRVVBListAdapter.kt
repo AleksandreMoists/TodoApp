@@ -12,14 +12,24 @@ import com.coding.meet.todo_app.models.Task
 import java.text.SimpleDateFormat
 import java.util.Locale
 
+/*
+The TaskRVVBListAdapter class is a RecyclerView adapter that supports displaying a list of tasks in two different layouts:
+
+List View
+Grid View
+It uses LiveData to switch between these layouts dynamically and provides functionality to delete or update tasks.
+ */
 class TaskRVVBListAdapter(
-    private val isList: MutableLiveData<Boolean>,
+        private val isList: MutableLiveData<Boolean>,
     private val deleteUpdateCallback: (type: String, position: Int, task: Task) -> Unit,
 ) :
     ListAdapter<Task,RecyclerView.ViewHolder>(DiffCallback()) {
 
 
-
+/* To support both List View and Grid View, two separate ViewHolders are created.
+  Displays task details (title, description, date).
+Handles delete and update actions via callback function.
+ */
     class ListTaskViewHolder(private val viewTaskListLayoutBinding: ViewTaskListLayoutBinding) :
         RecyclerView.ViewHolder(viewTaskListLayoutBinding.root) {
 
